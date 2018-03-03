@@ -24,6 +24,10 @@ $factory->define(App\Model\Product::class, function (Faker $faker) {
         'stock'=>$faker->randomDigit,
 
         'discount'=>$faker->numberBetween(2,40),
+        'user_id'=>function(){
+
+        return App\User::all()->random();
+        },
 
 
     ];

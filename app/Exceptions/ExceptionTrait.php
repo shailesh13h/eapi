@@ -11,11 +11,12 @@ use Symfony\Component\HttpFoundation\Response;
 
 trait ExceptionTrait {
 
-    public function apiException($request,$e){
+    public function apiException($request, $e){
 
 
 
-        if($this->isModel($e)){
+        if($this->isModel($e))
+        {
             return $this->ModelResponse($e);
                  }
 
@@ -25,7 +26,7 @@ trait ExceptionTrait {
                      return $this->HttpResponse($e);
                   }
 
-                 return parent::render($request, $e);
+                 return parent::render($request,$e);
 
     }
 
